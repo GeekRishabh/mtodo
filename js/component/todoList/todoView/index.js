@@ -10,19 +10,21 @@ export default class TodoView extends Component {
 
     
     toggleTodo() {
-        todoStore.toggleTodo(this.props.id);
+        console.log(this.props.todo.completed, 'oooooo');
+        // Alert.alert('Are you sure to mark the item ');
+        todoStore.toggleTodo(this.props.todo.id);
     }
 
     deleteTodo() {
-        Alert.alert('Button has been pressed!');
-        todoStore.deleteTodo(this.props.id);
+        // Alert.alert('Are you sure to delete the item');
+        todoStore.deleteTodo(this.props.todo.id);
     }   
 
     render() {
         return (
             <ListItem>
                 <CheckBox
-                    checked={true}
+                    checked={this.props.todo.completed}
                     onPress={()=>this.toggleTodo()}
                 />
                { this.props.todo.completed
@@ -31,7 +33,7 @@ export default class TodoView extends Component {
                     :
                     <Text>{this.props.todo.name}</Text>
                 }
-               <Button transparent  onPress={() => this.deleteTodo(todoStore.todo.id)} >
+               <Button transparent  onPress={() => this.deleteTodo()} >
              <Icon name="md-trash" style={{fontSize: 20}} />
              </Button>
             </ListItem>

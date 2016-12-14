@@ -25,7 +25,7 @@ class TodoList extends Component {
             return ( 
                 <Text 
             style={{alignSelf: 'center', justifyContent: 'center', marginTop: 10, fontWeight: 'bold', fontSize: 25, color: "#999"}}>
-            Todo List Empty</Text> 
+            No ToDo Item </Text> 
         )
          }
 

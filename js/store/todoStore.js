@@ -19,19 +19,22 @@ class 	TodoStore{
     }
 
     toggleTodo(id) {
+        console.log("toggle todo");
         this.todos = this.todos.map(todo => {
             if(todo.id !== id)
                 return todo;
-            return Object.assign({},
-                todo, {completed: !todo.completed})
+            return Object.assign(todo, {completed:!todo.completed})
         });
     }
 
     deleteTodo(id) {
+        console.log(id, "delete todo");
         this.todos = this.todos.filter(todo => {
             if(todo.id !== id)
                 return todo;
         });
+
+        console.log(this.todos.length);
     }
 
     

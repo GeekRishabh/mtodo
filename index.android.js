@@ -43,7 +43,7 @@ export default class mtodo extends Component {
                     <Title style={{color: 'green'}}>TodoList App</Title>
                 </Header>
                 <Content style={{backgroundColor: '#fff',width:400}}>
-                   <TodoList />
+                   <TodoList/>
                 </Content>
                 <Footer>
                   <TouchableHighlight>
