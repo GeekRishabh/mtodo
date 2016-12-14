@@ -5,9 +5,6 @@ import {observer} from 'mobx-react/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import todoStore from './js/store/todoStore';
-import todoList  from '.js/component/todoList'
-
-
 
 @observer
 export default class mtodo extends Component {

@@ -3,7 +3,7 @@ import { TouchableHighlight, Text, View, TextInput, ScrollView } from 'react-nat
 import { Button, Icon, Input, InputGroup, List, ListItem, CheckBox } from 'native-base';
 import {observer} from 'mobx-react/native';
 
-import todoStore from './store/todoStore';
+import todoStore from '../../store/todoStore';
 
 @observer
 export default class TodoView extends Component {

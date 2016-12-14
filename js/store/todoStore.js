@@ -2,7 +2,7 @@ import {observable, computed} from 'mobx';
 
 let nextid = 0;
 
-class todoStore{
+class 	TodoStore{
 
     @observable todos = [];
     
@@ -38,6 +38,6 @@ class todoStore{
     
 }
 
-const todoStore = new todoStore()
+const todoStore = new TodoStore()
 
 export default todoStore;

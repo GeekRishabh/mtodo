@@ -12,7 +12,6 @@ import todoList  from '.js/component/todoList'
 @observer
 export default class mtodo extends Component {
   
-
   constructor(props) {
     super(props);
   
