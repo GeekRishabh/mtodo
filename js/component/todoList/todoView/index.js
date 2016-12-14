@@ -22,7 +22,7 @@ export default class TodoView extends Component {
         return (
             <ListItem>
                 <CheckBox
-                    checked={this.props.todo.completed}
+                    checked={true}
                     onPress={()=>this.toggleTodo()}
                 />
                { this.props.todo.completed
