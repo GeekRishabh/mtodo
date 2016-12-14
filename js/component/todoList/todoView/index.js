@@ -9,14 +9,12 @@ import todoStore from '../../../store/todoStore';
 export default class TodoView extends Component {
 
     
-    toggleTodo()
-   {
-    todoStore.toggleTodo(this.props.id);
-   }
+    toggleTodo() {
+        todoStore.toggleTodo(this.props.id);
+    }
 
-   deleteTodo()
-   {
-     todoStore.deleteTodo(this.props.id);
+    deleteTodo() {
+        todoStore.deleteTodo(this.props.id);
     }   
 
     render() {
@@ -24,18 +22,8 @@ export default class TodoView extends Component {
             <ListItem>
                 <CheckBox
                     checked={this.props.todo.completed}
-                    onPress={() => this.toggleTodo()}
                 />
-                { this.props.todo.completed
-                    ?
-                    <Text style={{textDecorationLine: 'line-through'}}>{this.props.todo.name}</Text>
-                    :
-                    <Text>{this.props.todo.name}</Text>
-                }
-                
-                    <Icon name="md-trash" style={{fontSize: 20}} onPress={() => this.deleteTodo()} />
-                    
-                }
+                <Text>{this.props.todo.name}</Text>
             </ListItem>
         );
     }

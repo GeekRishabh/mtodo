@@ -15,26 +15,26 @@ class TodoList extends Component {
     }
 
     getList() {
-                if(todoStore.todos.length > 0) {
-                    return todoStore.todos.map((todo, index) => {
-                        return (
-                            <TodoView store={todoStore} key={index} name={todo} completed={false} />
-                        )
-                    });
-                }
-                else
-                 {   
-                return ( <Text 
-                style={{alignSelf: 'center', justifyContent: 'center', marginTop: 10, fontWeight: 'bold', fontSize: 25, color: "#999"}}>
-                Todo List Empty</Text> )
-                 }
-        
+        if(todoStore.todos.length > 0) {
+            return todoStore.todos.map((todo, index) => {
+                return (
+                    <TodoView store={todoStore} key={index} todo={todo} />
+                )
+            });
+        } else {   
+            return ( 
+                <Text 
+            style={{alignSelf: 'center', justifyContent: 'center', marginTop: 10, fontWeight: 'bold', fontSize: 25, color: "#999"}}>
+            Todo List Empty</Text> 
+        )
+         }
+
     }
 
     render() {
         return (
             <View>
-                <List>
+                <List style={{marginLeft:15 , marginRight:20}}>
                     {this.getList()}
                 </List>
             </View>

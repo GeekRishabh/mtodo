@@ -5,7 +5,7 @@ import {observer} from 'mobx-react/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import todoStore from './js/store/todoStore';
-import { TodoList } from './js/component/todoList';
+import TodoList from './js/component/todoList';
 
 @observer
 export default class mtodo extends Component {
@@ -26,6 +26,9 @@ export default class mtodo extends Component {
     console.log(todoStore);
     console.log(this.state.todoName);
     todoStore.addTodo(this.state.todoName);
+    this.setState({
+      todoName: ''
+    })
   }
 
   render() {
@@ -40,21 +43,7 @@ export default class mtodo extends Component {
                     <Title style={{color: 'green'}}>TodoList App</Title>
                 </Header>
                 <Content style={{backgroundColor: '#fff',width:400}}>
-                   <List style={{flexDirection:'column' ,marginLeft:15}}>
-                    <ListItem>
-                      <Text>dsddhsjdsjhdsdhj</Text>
-                    </ListItem>
-                    <ListItem>
-                      <Text>dsddhsjdsjhdsdhj</Text>
-                    </ListItem>
-                    <ListItem>
-                      <Text>dsddhsjdsjhdsdhj</Text>
-                    </ListItem>
-                    <ListItem>
-                      <Text>dsddhsjdsjhdsdhj</Text>
-                    </ListItem>
-                   </List>
-
+                   <TodoList />
                 </Content>
                 <Footer>
                   <TouchableHighlight>
@@ -62,10 +51,13 @@ export default class mtodo extends Component {
                 <TextInput 
                   style={{width:150,margin:10, alignItems:'stretch', borderWidth:1}} 
                   onChangeText={(text) => this.setState({todoName: text})}
-                  value={this.state.text}
+                  value={this.state.todoName}
                   onSubmitEditing={() => this.createTodo()}
+                  blurOnSubmit={false}
                 />
-            <Button primary style={{marginTop:10 ,marginBottom:10 ,marginLeft:100 ,padding:5,justifyContent:'flex-end'}}>
+            <Button primary 
+              onPress={() => this.createTodo()}
+            style={{marginTop:10 ,marginBottom:10 ,marginLeft:100 ,padding:5,justifyContent:'flex-end'}}>
                 Add Item
             </Button>
             </View>

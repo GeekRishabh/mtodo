@@ -8,11 +8,10 @@ class 	TodoStore{
     
     addTodo(todoName) {
         this.todos.push({
-                name: todoName,
-                completed: false,
-                id: nextid++,
-            });
-        console.log(this.todos.length);
+            name: todoName,
+            completed: false,
+            id: nextid++,
+        });
     }
 
     @computed get TodoCount() {
