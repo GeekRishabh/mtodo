@@ -5,13 +5,11 @@ import {observer} from 'mobx-react/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import todoStore from './js/store/todoStore';
-import todoList  from '.js/component/todoList'
-
-
 
 @observer
 export default class mtodo extends Component {
   
+
   constructor(props) {
     super(props);
   
@@ -37,12 +35,12 @@ export default class mtodo extends Component {
         <View style={styles.container}>
                 <Header>
                     <Button transparent>
-                        <Icon name="home" style={{color: "green" }}/>
+                        <Icon name="home" style={{color: "green" ,fontSize:25}}/>
                     </Button>
                     <Title style={{color: 'green'}}>TodoList App</Title>
                 </Header>
                 <Content style={{backgroundColor: '#fff',width:400}}>
-                   <List style={{flexDirection:'column' }}>
+                   <List style={{flexDirection:'column',marginLeft:15}}>
                     <ListItem>
                       <Text>dsddhsjdsjhdsdhj</Text>
                     </ListItem>
@@ -67,7 +65,9 @@ export default class mtodo extends Component {
                   value={this.state.text}
                   onSubmitEditing={() => this.createTodo()}
                 />
-            <Button primary style={{marginTop:10 ,marginBottom:10 ,marginLeft:100 ,padding:5,justifyContent:'flex-end'}}>
+            <Button primary 
+               onPress={() => this.createTodo()}
+            style={{marginTop:10 ,marginBottom:10 ,marginLeft:100 ,padding:5,justifyContent:'flex-end'}}>
                 Add Item
             </Button>
             </View>

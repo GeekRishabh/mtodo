@@ -12,7 +12,7 @@ class 	TodoStore{
                 completed: false,
                 id: nextid++,
             });
-        console.log(this.todoStore.length);
+        console.log(this.todos.length);
     }
 
     @computed get TodoCount() {
